@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    font-family: "Orbitron";
+    background-color: #282c34;
+    color: white;
+    height: 100vh;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.container .data{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   text-align: center;
+   justify-content: flex-start;
+   font-size: 1rem;
+   width: 100%;
+   gap: 7px;
+}
+
+.data .value{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+    text-align: center;
+}
