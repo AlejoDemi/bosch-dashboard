@@ -8,7 +8,7 @@ export const Dashboard = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       axios
-        .get("http://192.168.0.101:5000/car-data")
+        .get("http://192.168.0.102:5000/car-data")
         .then((response) => {
           // Assuming the response data is the car data you want to display
           setCarData(response.data);
@@ -19,6 +19,12 @@ export const Dashboard = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  const textualizeSpeed = (speed) => {
+    if(speed == 5) return "MAX"
+    if(speed == 3) return "HALF"
+    if(speed == 0) return "STOPPED"
+  }
 
   return (
     <div className="container">
@@ -34,7 +40,7 @@ export const Dashboard = () => {
         </div>
         <div className="value">
           <p>- Speed :</p>
-          <p>{carData.speed}</p>
+          <p>{textualizeSpeed(carData.speed)}</p>
         </div>
         <div className="value">
           <p>- Detected sign :</p>
